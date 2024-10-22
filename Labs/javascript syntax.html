@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport"
+ content="width=device-width,
+ initial-scale=1.0" />
+ <link rel="stylesheet"
+ href="./style.css" />
+ <title>Code Quiz</title>
+ <link rel="icon" type="image/jpeg" href="NITM.jpeg"></link>
+</head>
+<body bgcolor = "lightblue" >
+ <div class="containerNew">
+ <header>
+ <div>
+ <a href="./highscore.html">
+ <button class="scores-header"
+ id="view-high-scores" style = " background-color : rgba(47, 203, 242, 0.377) ">
+ View High Scores
+ </button>
+ </a>
+ </div>
+ <div class="timer">
+ <p>
+ Time:
+ <span id="timer">
+ 0
+ </span>
+ </p>
+ </div>
+ </header>
+ <main class="quiz">
+ <div id="quiz-start">
+ <div class="landing"
+ id="start-screen">
+ <h1 id="top">
+ INTERNET WEB TECHNOLOGY
+ <span>
+ SUBJECT CODE : CS255
+ </span>
+ </h1>
+ <p style = "font-size : 15 px; font-family : Arial; color: CornflowerBlue"> Quiz Practice
+ <p style = "font-size : 22px; font-family : Baskerville Old Face; color : DeepSkyBlue">
+ Some Rules of this Quiz:
+ </p>
+ <div class = "container_1">
+ <p style = " text-align : left ; font-style : italic "> 1. You will have only <span style
+ <p style = " text-align : left ; font-style : italic"> 2. Once you select your answer, it can't be <p style = " text-align : left ; font-style : italic "> 3. You can't select any option once the ti <p style = " text-align : left ; font-style : italic "> 4. You can't exit the Quiz while you're pl <p style = " text-align : left ; font-style : italic "> 5. You'll get points on the basis of your  </div>
+ <button id="start" style = " background-color : rgb(1, 2, 2) ">
+ Start Quiz
+ </button>
+ </div>
+ </div>
+ <div class="hide" id="questions">
+ <h2 id="question-words"></h2>
+ <div class="options" id="options">
+ </div>
+ </div>
+ <div class="hide" id="quiz-end">
+ <h2>All Done!</h2>
+ <p>Your final score is:
+ <span id="score-final">
+ </span>
+ </p>
+ <p>
+ Please enter your name:
+ <input type="text"
+ id="name"
+max="3" />
+ <button id="submit-score">
+ Submit
+ </button>
+ </p>
+ </div>
+ <div id="feedback"
+ class="feedback hide">
+ </div>
+ </main>
+ </div>
+ <script src="./script.js"></script>
+</body>
+</html>
+This code is for highscore.html-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport"
+ content="width=device-width,
+ initial-scale=1.0" />
+ <link rel="stylesheet"
+ href="./style.css" />
+ <script src="./highScore.js"></script>
+ <title>Code Quiz - High Scores</title>
+ <link rel="icon" type="image/jpeg" href="NITM.jpeg"></link>
+</head>
+<body>
+ <div class="scores">
+ <h1>Highscores</h1>
+ <ol id="highscores"></ol>
+ <a href="index.html">
+ <button>
+ Re-Start
+ </button>
+ </a>
+ <button id="clear">
+ Clear Highscores
+ </button>
+ </div>
+</body>
+</html>
+This code is for style.css-
+* {
+ font-family: Lucida Sans, Times, "Times New Roman", serif;
+}
+.quiz,
+.scores {
+ margin: 50px auto 0 auto;
+ max-width: 400px;
+}
+#top {
+ color: SlateBlue ;
+ font-size : 25px;
+}
+.container_1{
+ border : 1px solid Violet;
+ border-style : dashed ;
+ background-color : Gainsboro ;
+ font-size : 10px ;
+}
+.containerNew {
+ border: 0.5px solid;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ height: 580px;
+ width: 50%;
+ transform: translate(-50%, -50%);
+ padding: 10px;
+ background-color : white;
+}
+p {
+ margin: 15px 15px;
+}
+.landing {
+ text-align: center;
+}
+.scoresHeader {
+ position: absolute;
+ top: 15px;
+ left: 15px;
+}
+.timer {
+ position: absolute;
+ top: 15px;
+ right: 15px;
+}
+button {
+ display: inline-block;
+ margin: 10px;
+ cursor: pointer;
+ color: #fff;
+ background-color: #ffbc45;
+ border-radius: 5px;
+ border: 0;
+ padding: 20px;
+}
+button:hover {
+ background-color: #2a8d12;
+}
+.options button {
+ display: block;
+}
+input[type="text"] {
+ font-size: 100%;
+}
+.hide {
+ display: none;
+}
+.feedback {
+ font-style: bold;
+ font-size: 120%;
+ margin-top: 20px;
+ padding-top: 15px;
+ color: #fff;
+ border-top: 2px solid #4B0082;
+}
+ol {
+ padding-left: 15px;
+ max-height: 600px;
+ overflow: auto;
+}
+li {
+ padding: 5px;
+ list-style: decimal inside none;
+}
+li:nth-child(odd) {
+ background-color: #dfdae7;
+}
+@media screen and (max-width: 768px) {
+ .containerNew {
+ width: 80%;
+ }
+}
+@media screen and (max-width: 575px) {
+ .containerNew {
+ width: 90%;
+ }
+ .quiz,
+ .scores {
+ max-width: 90%;
+ }
+}
+This code is for script.jslet questions = [
+ {
+ prompt: `Inside which HTML
+ element do we put
+ the JavaScript?`,
+ options: [
+ "<javascript>",
+ "<js>",
+ "<script>",
+ "<scripting>",
+ ],
+ answer: "<script>",
+ },
+ {
+ prompt: `How do you call a
+ function named
+ myFunction?`,
+ options: [
+ "call myFunction()",
+ "myFunction()",
+ "call function myFunction",
+ "Call.myFunction",
+ ],
+ answer: "myFunction()",
+ },
+ {
+ prompt: `How does a for loop
+ start?`,
+ options: [
+ "for (i = 0; i <= 5; i++)",
+ "for (i = 0; i <= 5)",
+ "for i = 1 to 5",
+ " for (i <= 5; i++)",
+ ],
+ answer: "for (i = 0; i <= 5; i++)",
+ },
+ {
+ prompt: `In JavaScript, which
+ of the following is
+ a logical operator?`,
+ options: ["|", "&&", "%", "/"],
+ answer: "&&",
+ },
+ {
+ prompt: `A named element in a
+ JavaScript program that
+ is used to store and
+ retrieve data is a ___.`,
+ options: [
+ "method",
+ "assignment operator",
+ "letiable",
+ "string",
+ ],
+ answer: "letiable",
+ },
+];
+let questionsEl =
+ document.querySelector(
+ "#questions"
+ );
+let timerEl =
+ document.querySelector("#timer");
+let choicesEl =
+ document.querySelector("#options");
+let submitBtn = document.querySelector(
+ "#submit-score"
+);
+let startBtn =
+ document.querySelector("#start");
+let nameEl =
+ document.querySelector("#name");
+let feedbackEl = document.querySelector(
+ "#feedback"
+);
+let reStartBtn =
+ document.querySelector("#restart");
+let currentQuestionIndex = 0;
+let time = questions.length * 15;
+let timerId;
+function quizStart() {
+ timerId = setInterval(
+ clockTick,
+ 1000
+ );
+ timerEl.textContent = time;
+ let landingScreenEl =
+ document.getElementById(
+ "start-screen"
+ );
+ landingScreenEl.setAttribute(
+ "class",
+ "hide"
+ );
+ questionsEl.removeAttribute(
+ "class"
+ );
+ getQuestion();
+}
+function getQuestion() {
+ let currentQuestion =
+ questions[currentQuestionIndex];
+ let promptEl =
+ document.getElementById(
+ "question-words"
+ );
+ promptEl.textContent =
+ currentQuestion.prompt;
+ choicesEl.innerHTML = "";
+ currentQuestion.options.forEach(
+ function (choice, i) {
+ let choiceBtn =
+ document.createElement(
+ "button"
+ );
+ choiceBtn.setAttribute(
+ "value",
+ choice
+ );
+ choiceBtn.textContent =
+ i + 1 + ". " + choice;
+ choiceBtn.onclick =
+ questionClick;
+ choicesEl.appendChild(
+ choiceBtn
+ );
+ }
+ );
+}
+function questionClick() {
+ if (
+ this.value !==
+ questions[currentQuestionIndex]
+ .answer
+ ) {
+ time -= 10;
+ if (time < 0) {
+ time = 0;
+ }
+ timerEl.textContent = time;
+ feedbackEl.textContent = `Wrong! The correct answer was
+ ${questions[currentQuestionIndex].answer}.`;
+ feedbackEl.style.color = "red";
+ } else {
+ feedbackEl.textContent =
+ "Correct!";
+ feedbackEl.style.color =
+ "green";
+ }
+ feedbackEl.setAttribute(
+ "class",
+ "feedback"
+ );
+ setTimeout(function () {
+ feedbackEl.setAttribute(
+ "class",
+ "feedback hide"
+ );
+ }, 2000);
+ currentQuestionIndex++;
+ if (
+ currentQuestionIndex ===
+ questions.length
+ ) {
+ quizEnd();
+ } else {
+ getQuestion();
+ }
+}
+function quizEnd() {
+ clearInterval(timerId);
+ let endScreenEl =
+ document.getElementById(
+ "quiz-end"
+ );
+ endScreenEl.removeAttribute(
+ "class"
+ );
+ let finalScoreEl =
+ document.getElementById(
+ "score-final"
+ );
+ finalScoreEl.textContent = time;
+ questionsEl.setAttribute(
+ "class",
+ "hide"
+ );
+}
+function clockTick() {
+ time--;
+ timerEl.textContent = time;
+ if (time <= 0) {
+ quizEnd();
+ }
+}
+function saveHighscore() {
+ let name = nameEl.value.trim();
+ if (name !== "") {
+ let highscores =
+ JSON.parse(
+ window.localStorage.getItem(
+ "highscores"
+ )
+ ) || [];
+ let newScore = {
+ score: time,
+ name: name,
+ };
+ highscores.push(newScore);
+ window.localStorage.setItem(
+ "highscores",
+ JSON.stringify(highscores)
+ );
+ alert(
+ "Your Score has been Submitted"
+ );
+ }
+}
+function checkForEnter(event) {
+ if (event.key === "Enter") {
+ saveHighscore();
+ alert(
+ "Your Score has been Submitted"
+ );
+ }
+}
+nameEl.onkeyup = checkForEnter;
+submitBtn.onclick = saveHighscore;
+startBtn.onclick = quizStart;
+This code is for highscore.js
+let scoresBtn = document.querySelector(
+ "#view-high-scores"
+);
+function printHighscores() {
+ let highscores =
+ JSON.parse(
+ window.localStorage.getItem(
+ "highscores"
+ )
+ ) || [];
+ highscores.sort(function (a, b) {
+ return b.score - a.score;
+ });
+ highscores.forEach(function (
+ score
+ ) {
+ let liTag =
+ document.createElement(
+ "li"
+ );
+ liTag.textContent =
+ score.name +
+ " - " +
+ score.score;
+ let olEl =
+ document.getElementById(
+ "highscores"
+ );
+ olEl.appendChild(liTag);
+ });
+}
+function clearHighscores() {
+ window.localStorage.removeItem(
+ "highscores"
+ );
+ window.location.reload();
+}
+document.getElementById(
+ "clear"
+).onclick = clearHighscores;
+printHighscores();
+</body>
+</html>
